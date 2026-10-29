@@ -1,9 +1,22 @@
 @import 'tailwindcss';
 
+@source '../views/**/*.blade.php';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-brand-yellow: #f59e0b;
+    --color-brand-red: #dc2626;
+    --color-brand-dark: #0f172a;
+}
+
+/* Strictly enforce sharp corners throughout the entire company profile */
+*, ::before, ::after {
+    border-radius: 0px !important;
+}
+
+html {
+    scroll-behavior: smooth;
 }
