@@ -132,7 +132,7 @@
                         <span>Senin – Sabtu</span>
                         <span class="font-semibold text-white">08:00 – 16:00 WIB</span>
                     </div>
-                    <a href="https://maps.google.com/?q={{ urlencode(config('bengkel.address')) }}"
+                    <a href="{{ config('bengkel.gmaps') }}"
                        target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white transition-all hover:border-brand-red/50">
                         <svg class="w-4 h-4 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

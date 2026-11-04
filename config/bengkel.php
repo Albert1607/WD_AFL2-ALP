@@ -19,6 +19,7 @@ return [
     'phone' => '+6282329840652',
     'tel_office' => '(031) 7590586',
     'wa' => '6282329840652',
+    'gmaps' => 'https://maps.app.goo.gl/UTbZkoLiiiVQPBRGA',
     'hours' => [
         'weekday' => 'Senin – Sabtu: 08.00 – 16.00 WIB',
         'weekend' => 'Minggu: Tutup (Konsultasi via WA)',
