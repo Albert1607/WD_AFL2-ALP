@@ -23,7 +23,7 @@
   },
   "openingHours": ["Mo-Sa 08:00-16:00"],
   "priceRange": "Rp 150.000 \u2013 Rp 1.500.000",
-  "image": "{{ asset('images/kardiputramotor_landscape.jpeg') }}"
+  "image": "{{ asset('images/hero-workshop.jpg') }}"
 }
 </script>
 @endpush
@@ -36,11 +36,14 @@
 <section class="relative min-h-[90vh] flex items-center overflow-hidden" aria-label="Hero">
     {{-- Background image with dark overlay --}}
     <div class="absolute inset-0">
-        <img src="{{ asset('images/kardiputramotor_landscape.jpeg') }}"
-             alt="Bengkel Mobil Kardi Putra Motor di Driyorejo Gresik"
-             class="w-full h-full object-cover object-center lg:object-[center_right]"
-             width="1600" height="900"
-             fetchpriority="high">
+        <picture>
+            <source media="(max-width: 640px)" srcset="{{ asset('images/kardiputramotor_potrait.jpeg') }}">
+            <img src="{{ asset('images/hero-workshop.jpg') }}"
+                 alt="Bengkel Mobil Kardi Putra Motor di Driyorejo Gresik"
+                 class="w-full h-full object-cover object-center lg:object-[center_right]"
+                 width="1600" height="900"
+                 fetchpriority="high">
+        </picture>
         {{-- Layered gradients for optimal text contrast and natural photo visibility --}}
         <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#0B0D10] via-[#0B0D10]/85 via-55% to-[#0B0D10]/30"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D10] via-[#0B0D10]/60 to-transparent"></div>
