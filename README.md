@@ -1,58 +1,171 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Kardi Putra Motor – Company Profile Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Profil perusahaan bengkel motor **Kardi Putra Motor** dibangun dengan Laravel 11, Blade, dan Tailwind CSS v4. Desain dark glassmorphism dengan aksen merah premium.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+| Layer | Teknologi |
+|-------|-----------|
+| Framework | Laravel 11 (PHP 8.2+) |
+| Frontend | Blade + Tailwind CSS v4 (via Vite) |
+| Database | MySQL (produksi) / SQLite (lokal dev) |
+| Fonts | Sora (heading) + Inter (body) via Google Fonts |
+| Icons | Inline SVG (Heroicons / Lucide style) |
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Setup Lokal (Development)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### 1. Clone & Install Dependencies
 
 ```bash
-composer require laravel/boost --dev
+git clone <repo-url> kardi-putra-motor
+cd kardi-putra-motor
 
-php artisan boost:install
+composer install
+npm install
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Konfigurasi Environment
 
-## Contributing
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Edit `.env` sesuai kebutuhan. Untuk **SQLite lokal** (siap pakai tanpa MySQL):
 
-## Code of Conduct
+```env
+DB_CONNECTION=sqlite
+SESSION_DRIVER=file
+CACHE_STORE=file
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Untuk **MySQL lokal**:
 
-## Security Vulnerabilities
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=kardi_putra_motor
+DB_USERNAME=root
+DB_PASSWORD=your_password
+SESSION_DRIVER=database
+CACHE_STORE=database
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 3. Database
 
-## License
+```bash
+php artisan migrate --seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Ini akan membuat 3 tabel (`kategori_layanan`, `layanan`, `testimoni`) dan mengisi dengan data sample realistis.
+
+### 4. Build Assets
+
+```bash
+npm run build
+```
+
+### 5. Jalankan Server
+
+```bash
+php artisan serve
+```
+
+Buka: http://localhost:8000
+
+---
+
+## Halaman Tersedia
+
+| URL | Nama |
+|-----|------|
+| `/` | Beranda (Hero, Layanan, Testimoni, dll.) |
+| `/layanan` | Daftar semua layanan (filter by kategori) |
+| `/layanan/{slug}` | Detail layanan + testimoni |
+| `/testimoni` | Semua testimoni (paginated) |
+| `/kontak` | Kontak, peta, WhatsApp |
+
+---
+
+## Struktur Database
+
+```
+kategori_layanan (4 kategori)
+  └── layanan (12 layanan, FK → kategori_layanan)
+        └── testimoni (10 testimoni, FK → layanan)
+```
+
+---
+
+## Konfigurasi Bisnis
+
+Semua data bisnis tersimpan di [`config/bengkel.php`](config/bengkel.php):
+
+```php
+// Nama, tagline, alamat, nomor WA, jam buka, link maps, dll.
+config('bengkel.name')    // "Kardi Putra Motor"
+config('bengkel.wa')      // nomor WA untuk link wa.me
+config('bengkel.address') // alamat lengkap
+```
+
+---
+
+## Mengganti Foto
+
+Letakkan foto di `public/images/`. Nama file sudah ditentukan:
+
+| File | Digunakan untuk |
+|------|-----------------|
+| `hero-workshop.jpg` | Foto hero (mekanik + motor) |
+| `layanan-ganti-oli.jpg` | Layanan ganti oli |
+| `layanan-servis-ringan.jpg` | Servis ringan |
+| `layanan-servis-besar.jpg` | Servis besar/overhaul |
+| `layanan-tune-up-injeksi.jpg` | Tune up injeksi |
+| `layanan-servis-cvt.jpg` | Servis CVT matic |
+| `layanan-kampas-rem.jpg` | Ganti kampas rem |
+| `layanan-rem-cakram.jpg` | Servis rem cakram |
+| `layanan-rantai-gear.jpg` | Ganti rantai & gear |
+| `layanan-ganti-ban.jpg` | Ganti ban |
+| `layanan-shock.jpg` | Servis shock absorber |
+| `layanan-ganti-aki.jpg` | Ganti aki |
+| `layanan-busi-listrik.jpg` | Ganti busi & kelistrikan |
+| `og-image.jpg` | Open Graph (1200×630px) |
+
+---
+
+## Komponen Blade
+
+| Komponen | Deskripsi |
+|----------|-----------|
+| `x-navbar` | Navbar sticky glass dengan hamburger mobile |
+| `x-footer` | Footer dengan kolom layanan, jam, kontak |
+| `x-glass-card` | Wrapper glass card reusable |
+| `x-service-card` | Kartu layanan dengan image, harga, CTA |
+| `x-testimonial-card` | Kartu testimoni dengan rating bintang |
+| `x-section-title` | Title section dengan label merah |
+
+---
+
+## Perintah Berguna
+
+```bash
+# Reset & isi ulang database
+php artisan migrate:fresh --seed
+
+# Bersihkan cache views
+php artisan view:clear
+
+# Lihat semua route
+php artisan route:list --except-vendor
+
+# Format kode PHP
+vendor/bin/pint --dirty
+
+# Dev server dengan HMR
+npm run dev
+```

@@ -2,32 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\MechanicDataService;
+use App\Models\Layanan;
+use App\Models\Testimoni;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 
 class HomeController extends Controller
 {
     /**
-     * Show the main company profile homepage.
+     * Display the company profile homepage.
      */
     public function index(): View
     {
-        $services = MechanicDataService::getServices();
-        $promotions = MechanicDataService::getPromotions();
-        $outlets = MechanicDataService::getOutlets();
-        $cars = MechanicDataService::getCarDatabase();
-        $testimonials = MechanicDataService::getTestimonials();
-        $tips = MechanicDataService::getTips();
-        $stats = MechanicDataService::getCompanyStats();
+        /** @var Collection<int, Layanan> $featuredLayanan */
+        $featuredLayanan = Layanan::with('kategori')
+            ->limit(6)
+            ->get();
+
+        /** @var Collection<int, Testimoni> $latestTestimoni */
+        $latestTestimoni = Testimoni::with('layanan')
+            ->latest()
+            ->limit(3)
+            ->get();
+
+        $stats = config('bengkel.stats');
+        $whyUs = config('bengkel.why_us');
+        $howItWorks = config('bengkel.how_it_works');
+        $brands = config('bengkel.brands');
 
         return view('home', compact(
-            'services',
-            'promotions',
-            'outlets',
-            'cars',
-            'testimonials',
-            'tips',
-            'stats'
+            'featuredLayanan',
+            'latestTestimoni',
+            'stats',
+            'whyUs',
+            'howItWorks',
+            'brands',
         ));
     }
 }
