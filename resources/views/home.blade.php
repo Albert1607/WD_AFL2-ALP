@@ -23,7 +23,7 @@
   },
   "openingHours": ["Mo-Sa 08:00-16:00"],
   "priceRange": "Rp 150.000 \u2013 Rp 1.500.000",
-  "image": "{{ asset('images/hero-workshop.jpg') }}"
+  "image": "{{ asset('images/kardiputramotor_landscape.jpeg') }}"
 }
 </script>
 @endpush
@@ -36,46 +36,109 @@
 <section class="relative min-h-[90vh] flex items-center overflow-hidden" aria-label="Hero">
     {{-- Background image with dark overlay --}}
     <div class="absolute inset-0">
-        <img src="{{ asset('images/hero-workshop.jpg') }}"
-             alt="Mekanik Kardi Putra Motor sedang mengerjakan mobil"
-             class="w-full h-full object-cover"
-             width="1920" height="1080"
+        <img src="{{ asset('images/kardiputramotor_landscape.jpeg') }}"
+             alt="Bengkel Mobil Kardi Putra Motor di Driyorejo Gresik"
+             class="w-full h-full object-cover object-center lg:object-[center_right]"
+             width="1600" height="900"
              fetchpriority="high">
-        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D10] via-transparent to-transparent"></div>
+        {{-- Layered gradients for optimal text contrast and natural photo visibility --}}
+        <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#0B0D10] via-[#0B0D10]/85 via-55% to-[#0B0D10]/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D10] via-[#0B0D10]/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0B0D10]/85 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(229,37,42,0.14),_transparent_60%)] pointer-events-none"></div>
     </div>
 
     {{-- Hero content --}}
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-        <div class="max-w-2xl space-y-7">
-            {{-- Headline --}}
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white font-heading leading-tight">
-                Servis Mobil Cepat,<br>
-                <span class="text-brand-red">Jujur</span>, & Bergaransi
-            </h1>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-36 sm:pb-36 lg:py-32 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {{-- Left column: Headline & CTAs --}}
+            <div class="lg:col-span-7 space-y-7">
+                {{-- Location / Trust Badge --}}
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-brand-red/10 border border-brand-red/30 text-white text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md">
+                    <span class="w-2 h-2 bg-brand-red inline-block animate-pulse" aria-hidden="true"></span>
+                    <span class="text-brand-red font-bold">BENGKEL RESMI &amp; TERPERCAYA</span>
+                    <span class="text-slate-500" aria-hidden="true">|</span>
+                    <span class="text-slate-200">Driyorejo, Gresik</span>
+                </div>
 
-            <p class="text-lg text-slate-300 leading-relaxed">
-                Mekanik berpengalaman, sparepart asli, estimasi biaya transparan.<br class="hidden sm:block">
-                Percayakan mobil Anda pada ahlinya.
-            </p>
+                {{-- Headline --}}
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white font-heading leading-tight drop-shadow-sm">
+                    Servis Mobil Cepat,<br>
+                    <span class="text-brand-red">Jujur</span>, &amp; Bergaransi
+                </h1>
 
-            {{-- CTAs --}}
-            <div class="flex flex-col sm:flex-row gap-3 pt-2">
-                <a href="https://wa.me/{{ config('bengkel.wa') }}?text={{ config('bengkel.wa_message') }}"
-                   target="_blank" rel="noopener noreferrer"
-                   class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-semibold px-6 py-3.5 transition-all duration-200 shadow-lg shadow-red-900/50 hover:shadow-red-900/70 hover:-translate-y-0.5">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/>
-                    </svg>
-                    Konsultasi via WhatsApp
-                </a>
-                <a href="{{ route('layanan.index') }}"
-                   class="inline-flex items-center justify-center gap-2 glass-card text-white font-semibold px-6 py-3.5 hover:bg-white/12 transition-all duration-200 hover:-translate-y-0.5">
-                    Lihat Semua Layanan
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
+                {{-- Subtitle --}}
+                <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                    Mekanik berpengalaman, sparepart asli, estimasi biaya transparan.<br class="hidden sm:block">
+                    Percayakan perawatan mobil Anda langsung di bengkel Kardi Putra Motor.
+                </p>
+
+                {{-- Quick Feature Highlights --}}
+                <div class="flex flex-wrap gap-2 pt-1 text-xs text-slate-300">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10">
+                        <svg class="w-3.5 h-3.5 text-brand-red shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Estimasi Transparan di Awal
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10">
+                        <svg class="w-3.5 h-3.5 text-brand-red shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Mekanik Berpengalaman
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10">
+                        <svg class="w-3.5 h-3.5 text-brand-red shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Garansi Servis Resmi
+                    </span>
+                </div>
+
+                {{-- CTAs --}}
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                    <a href="https://wa.me/{{ config('bengkel.wa') }}?text={{ config('bengkel.wa_message') }}"
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-semibold px-6 py-3.5 transition-all duration-200 shadow-lg shadow-red-900/50 hover:shadow-red-900/70 hover:-translate-y-0.5">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/>
+                        </svg>
+                        Konsultasi via WhatsApp
+                    </a>
+                    <a href="{{ route('layanan.index') }}"
+                       class="inline-flex items-center justify-center gap-2 glass-card text-white font-semibold px-6 py-3.5 hover:bg-white/12 transition-all duration-200 hover:-translate-y-0.5">
+                        Lihat Semua Layanan
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            {{-- Right column: Workshop Info Glass Card (Visible on desktop) --}}
+            <div class="hidden lg:flex lg:col-span-5 flex-col items-end justify-center">
+                <div class="glass-card p-6 max-w-sm w-full space-y-4 border-l-2 border-l-brand-red backdrop-blur-xl">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider font-semibold text-brand-red">Lokasi Bengkel</span>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
+                            <span class="w-2 h-2 bg-emerald-400 inline-block animate-pulse" aria-hidden="true"></span>
+                            Buka Hari Ini
+                        </span>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-white font-heading">Kardi Putra Motor</h2>
+                        <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                            {{ config('bengkel.address') }}
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>Senin – Sabtu</span>
+                        <span class="font-semibold text-white">08:00 – 16:00 WIB</span>
+                    </div>
+                    <a href="https://maps.google.com/?q={{ urlencode(config('bengkel.address')) }}"
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white transition-all hover:border-brand-red/50">
+                        <svg class="w-4 h-4 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Petunjuk Arah Google Maps
+                    </a>
+                </div>
             </div>
         </div>
     </div>

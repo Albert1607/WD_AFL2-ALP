@@ -121,7 +121,7 @@ Letakkan foto di `public/images/`. Nama file sudah ditentukan:
 
 | File | Digunakan untuk |
 |------|-----------------|
-| `hero-workshop.jpg` | Foto hero (mekanik + motor) |
+| `kardiputramotor_landscape.jpeg` | Foto hero bengkel (tampak lanskap) |
 | `layanan-ganti-oli.jpg` | Layanan ganti oli |
 | `layanan-servis-ringan.jpg` | Servis ringan |
 | `layanan-servis-besar.jpg` | Servis besar/overhaul |
