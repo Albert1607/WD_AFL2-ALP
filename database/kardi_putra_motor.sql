@@ -108,25 +108,23 @@ CREATE TABLE `logo_brands` (
   `nama_brand` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `logo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jenis` enum('kendaraan','sparepart_oli') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `latar` enum('terang','gelap') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'terang',
-  `urutan` smallint(5) UNSIGNED NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data untuk tabel `logo_brands`
-INSERT INTO `logo_brands` (`id`, `nama_brand`, `logo`, `jenis`, `latar`, `urutan`, `created_at`, `updated_at`) VALUES
-(1, 'Toyota', 'Toyota_Logo.svg.webp', 'kendaraan', 'terang', 1, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(2, 'Honda', 'Honda-Logo-2000-present.png', 'kendaraan', 'terang', 2, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(3, 'Daihatsu', 'daihatsu-logo-png.png', 'kendaraan', 'terang', 3, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(4, 'Mitsubishi', 'mitsubishi-logo-png.png', 'kendaraan', 'terang', 4, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(5, 'Suzuki', 'suzuki-black-logo.png', 'kendaraan', 'terang', 5, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(6, 'Shell', 'shell-white-logo-oil-and-gas-company-icon-emblem-premium-quality-transparent-background-free-png.webp', 'sparepart_oli', 'gelap', 6, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(7, 'Castrol', 'castrol-logo-png.png', 'sparepart_oli', 'terang', 7, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(8, 'Mobil 1', 'mobil-1-logo-black-and-white.png', 'sparepart_oli', 'gelap', 8, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(9, 'NGK', 'ngk-logo-black-and-white-1.png', 'sparepart_oli', 'terang', 9, '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
-(10, 'Denso', 'DENSO-Logo.png', 'sparepart_oli', 'terang', 10, '2026-11-04 16:15:00', '2026-11-04 16:15:00');
+INSERT INTO `logo_brands` (`id`, `nama_brand`, `logo`, `jenis`, `created_at`, `updated_at`) VALUES
+(1, 'Toyota', 'Toyota_Logo.svg.webp', 'kendaraan', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(2, 'Honda', 'Honda-Logo-2000-present.png', 'kendaraan', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(3, 'Daihatsu', 'daihatsu-logo-png.png', 'kendaraan', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(4, 'Mitsubishi', 'mitsubishi-logo-png.png', 'kendaraan', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(5, 'Suzuki', 'suzuki-black-logo.png', 'kendaraan', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(6, 'Shell', 'shell-white-logo-oil-and-gas-company-icon-emblem-premium-quality-transparent-background-free-png.webp', 'sparepart_oli', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(7, 'Castrol', 'castrol-logo-png.png', 'sparepart_oli', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(8, 'Mobil 1', 'mobil-1-logo-black-and-white.png', 'sparepart_oli', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(9, 'NGK', 'ngk-logo-black-and-white-1.png', 'sparepart_oli', '2026-11-04 16:15:00', '2026-11-04 16:15:00'),
+(10, 'Denso', 'DENSO-Logo.png', 'sparepart_oli', '2026-11-04 16:15:00', '2026-11-04 16:15:00');
 
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;

@@ -16,7 +16,6 @@ class LogoBrandTest extends TestCase
         $brand = LogoBrand::factory()->create([
             'nama_brand' => 'Merek Uji',
             'logo' => 'toyota.png',
-            'urutan' => 1,
         ]);
 
         $response = $this->get('/');
