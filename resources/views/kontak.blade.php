@@ -68,9 +68,12 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="font-medium text-white mb-0.5">Telepon</div>
-                            <a href="tel:{{ config('bengkel.phone') }}" class="text-slate-400 hover:text-white transition-colors">
-                                {{ config('bengkel.phone') }}
+                            <div class="font-medium text-white mb-0.5">Telepon & WhatsApp</div>
+                            <a href="tel:{{ config('bengkel.phone') }}" class="text-slate-400 hover:text-white transition-colors block">
+                                {{ config('bengkel.phone') }} (WA / Call)
+                            </a>
+                            <a href="tel:0317590586" class="text-slate-500 hover:text-white transition-colors text-xs block mt-0.5">
+                                Kantor: {{ config('bengkel.tel_office') }}
                             </a>
                         </div>
                     </div>

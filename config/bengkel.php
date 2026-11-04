@@ -15,30 +15,31 @@ return [
     'tagline' => 'Servis Mobil Cepat, Jujur, dan Bergaransi',
     'short' => 'KPM',
 
-    'address' => 'Jl. Raya Pahlawan No. 88, Kel. Sukamaju, Kec. Cimanggis, Depok, Jawa Barat 16451',
-    'phone' => '+6281234567890',
-    'wa' => '6281234567890',
+    'address' => 'Jl. Raya Cangkir No. KM 22, Dusun Gading, Cangkir, Kec. Driyorejo, Kabupaten Gresik, Jawa Timur 61177',
+    'phone' => '+6282329840652',
+    'tel_office' => '(031) 7590586',
+    'wa' => '6282329840652',
     'hours' => [
-        'weekday' => 'Senin – Sabtu: 08.00 – 17.00',
-        'weekend' => 'Minggu & Libur: 08.00 – 14.00',
+        'weekday' => 'Senin – Sabtu: 08.00 – 16.00 WIB',
+        'weekend' => 'Minggu: Tutup (Konsultasi via WA)',
     ],
 
     'email' => 'info@kardiputramotor.com',
-    'instagram' => 'kardiputramotor',
+    'instagram' => 'kpmcare.id',
 
-    'maps_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4!2d106.85!3d-6.37!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zBsKwMjInMTIuMCJTIDEwNsKwNTEnMDAuMCJF!5e0!3m2!1sid!2sid!4v1699999999999',
+    'maps_embed' => 'https://maps.google.com/maps?q=Kardi+Putra+Motor+Service+%26+Variasi,+Driyorejo,+Gresik&t=&z=16&ie=UTF8&iwloc=&output=embed',
 
     'wa_message' => 'Halo%20Kardi%20Putra%20Motor%2C%20saya%20ingin%20konsultasi%20servis%20mobil',
 
     'stats' => [
-        ['value' => '10+',   'label' => 'Tahun Pengalaman'],
+        ['value' => '15+',   'label' => 'Tahun Pengalaman'],
         ['value' => '5.000+', 'label' => 'Mobil Diservis'],
         ['value' => '4.9',   'label' => 'Rating Pelanggan'],
         ['value' => '100%',  'label' => 'Sparepart Asli'],
     ],
 
     'why_us' => [
-        ['icon' => 'wrench', 'title' => 'Mekanik Berpengalaman',  'desc' => 'Teknisi bersertifikat dengan pengalaman lebih dari 10 tahun menangani berbagai merek mobil.'],
+        ['icon' => 'wrench', 'title' => 'Mekanik Berpengalaman',  'desc' => 'Teknisi bersertifikat dengan pengalaman bertahun-tahun menangani berbagai merek mobil.'],
         ['icon' => 'currency', 'title' => 'Harga Transparan',      'desc' => 'Estimasi biaya diberikan sebelum pengerjaan dimulai. Tidak ada biaya tersembunyi.'],
         ['icon' => 'shield', 'title' => 'Sparepart Asli',          'desc' => 'Kami hanya menggunakan suku cadang original bergaransi dari distributor resmi.'],
         ['icon' => 'clock',  'title' => 'Servis Cepat & Tepat',   'desc' => 'Pengerjaan efisien tanpa mengorbankan kualitas. Mobil Anda selesai tepat waktu.'],

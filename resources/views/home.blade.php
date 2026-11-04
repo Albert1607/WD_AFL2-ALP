@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', config('bengkel.name') . ' – ' . config('bengkel.tagline'))
-@section('meta_description', 'Kardi Putra Motor – bengkel mobil terpercaya di Depok. Mekanik berpengalaman, sparepart asli, servis cepat, dan garansi resmi. Hubungi kami sekarang!')
+@section('meta_description', 'Kardi Putra Motor – bengkel mobil terpercaya di Driyorejo, Gresik. Mekanik berpengalaman, sparepart asli, servis cepat, dan garansi resmi. Hubungi kami sekarang!')
 
 @push('head')
 {{-- LocalBusiness JSON-LD structured data --}}
@@ -15,14 +15,14 @@
   "telephone": "{{ config('bengkel.phone') }}",
   "address": {
     "@@type": "PostalAddress",
-    "streetAddress": "Jl. Raya Pahlawan No. 88",
-    "addressLocality": "Depok",
-    "addressRegion": "Jawa Barat",
-    "postalCode": "16451",
+    "streetAddress": "Jl. Raya Cangkir No. KM 22",
+    "addressLocality": "Driyorejo, Gresik",
+    "addressRegion": "Jawa Timur",
+    "postalCode": "61177",
     "addressCountry": "ID"
   },
-  "openingHours": ["Mo-Sa 08:00-17:00", "Su 08:00-14:00"],
-  "priceRange": "Rp 45.000 \u2013 Rp 500.000",
+  "openingHours": ["Mo-Sa 08:00-16:00"],
+  "priceRange": "Rp 150.000 \u2013 Rp 1.500.000",
   "image": "{{ asset('images/hero-workshop.jpg') }}"
 }
 </script>
