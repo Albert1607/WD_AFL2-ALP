@@ -13,12 +13,12 @@
     <meta property="og:site_name"   content="{{ config('bengkel.name') }}">
     <meta property="og:title"       content="@yield('og_title', config('bengkel.name') . ' – ' . config('bengkel.tagline'))">
     <meta property="og:description" content="@yield('og_description', 'Bengkel mobil terpercaya – servis cepat, harga transparan, sparepart asli, garansi resmi.')">
-    <meta property="og:image"       content="{{ asset('images/og-image.jpg') }}">
+    <meta property="og:image"       content="{{ asset('images/global/og-image.jpg') }}">
     <meta property="og:url"         content="{{ url()->current() }}">
     <meta name="twitter:card"       content="summary_large_image">
 
     {{-- Favicon --}}
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M19 7h-3l-2-4H9L7 7H4a1 1 0 00-1 1v8a1 1 0 001 1h1a2 2 0 004 0h6a2 2 0 004 0h1a1 1 0 001-1V8a1 1 0 00-1-1z' fill='%23E5252A'/></svg>">
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/global/logo-kardiputramotor.jpeg') }}">
 
     {{-- Preload Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
 
     @stack('head')
 </head>
-<body class="min-h-full flex flex-col bg-[#0B0D10] text-slate-200 antialiased selection:bg-brand-red selection:text-white">
+<body class="min-h-full flex flex-col bg-[#0B0D10] text-slate-200 antialiased selection:bg-brand-blue selection:text-white">
 
     {{-- Radial background glows --}}
     <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">

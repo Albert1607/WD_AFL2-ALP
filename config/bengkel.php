@@ -33,7 +33,7 @@ return [
     'wa_message' => 'Halo%20Kardi%20Putra%20Motor%2C%20saya%20ingin%20konsultasi%20servis%20mobil',
 
     'stats' => [
-        ['value' => '15+',   'label' => 'Tahun Pengalaman'],
+        ['value' => '20+',   'label' => 'Tahun Pengalaman'],
         ['value' => '5.000+', 'label' => 'Mobil Diservis'],
         ['value' => '4.9',   'label' => 'Rating Pelanggan'],
         ['value' => '100%',  'label' => 'Sparepart Asli'],
@@ -53,10 +53,5 @@ return [
         ['step' => '02', 'title' => 'Ceritakan Keluhan',    'desc' => 'Deskripsikan masalah mobil Anda agar kami bisa menyiapkan solusi terbaik.'],
         ['step' => '03', 'title' => 'Inspeksi & Estimasi',  'desc' => 'Mekanik inspeksi menyeluruh dan memberikan estimasi biaya sebelum pengerjaan.'],
         ['step' => '04', 'title' => 'Selesai & Bergaransi', 'desc' => 'Mobil beres, Anda puas. Setiap servis dilindungi garansi resmi Kardi Putra Motor.'],
-    ],
-
-    'brands' => [
-        'Toyota', 'Honda', 'Daihatsu', 'Mitsubishi', 'Suzuki',
-        'Shell', 'Castrol', 'Mobil 1', 'NGK', 'Denso',
     ],
 ];

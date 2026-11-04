@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Layanan;
+use App\Models\LogoBrand;
 use App\Models\Testimoni;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
@@ -28,7 +29,9 @@ class HomeController extends Controller
         $stats = config('bengkel.stats');
         $whyUs = config('bengkel.why_us');
         $howItWorks = config('bengkel.how_it_works');
-        $brands = config('bengkel.brands');
+
+        /** @var Collection<int, LogoBrand> $brands */
+        $brands = LogoBrand::orderBy('id')->get();
 
         return view('home', compact(
             'featuredLayanan',

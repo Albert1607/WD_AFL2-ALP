@@ -5,10 +5,10 @@
 
 <div class="space-y-3 {{ $alignClass }}">
     @if($label)
-        <span class="inline-flex items-center gap-2 text-xs font-semibold text-brand-red uppercase tracking-widest">
-            <span class="w-6 h-px bg-brand-red"></span>
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-brand-blue uppercase tracking-widest">
+            <span class="w-6 h-px bg-brand-blue"></span>
             {{ $label }}
-            <span class="w-6 h-px bg-brand-red"></span>
+            <span class="w-6 h-px bg-brand-blue"></span>
         </span>
     @endif
 

@@ -16,17 +16,13 @@
 
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="flex items-center gap-3 group">
-                <div class="w-9 h-9 bg-brand-red flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                    {{-- Car icon --}}
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7h-3l-2-4H9L7 7H4a1 1 0 00-1 1v8a1 1 0 001 1h1a2 2 0 004 0h6a2 2 0 004 0h1a1 1 0 001-1V8a1 1 0 00-1-1z"/>
-                        <circle cx="7" cy="17" r="1" fill="currentColor"/>
-                        <circle cx="17" cy="17" r="1" fill="currentColor"/>
-                    </svg>
-                </div>
+                <img src="{{ asset('images/global/logo-kardiputramotor.jpeg') }}"
+                     alt="Logo {{ config('bengkel.name') }}"
+                     class="w-10 h-10 object-contain group-hover:scale-105 transition-transform"
+                     width="40" height="40">
                 <div class="leading-tight">
                     <span class="block text-sm font-bold text-white font-heading tracking-tight">Kardi Putra</span>
-                    <span class="block text-[10px] text-brand-red font-semibold uppercase tracking-widest">Motor</span>
+                    <span class="block text-[10px] text-brand-blue font-semibold uppercase tracking-widest">Motor</span>
                 </div>
             </a>
 
@@ -47,7 +43,7 @@
             <div class="flex items-center gap-3">
                 <a href="https://wa.me/{{ $wa }}?text={{ $waMsg }}"
                    target="_blank" rel="noopener noreferrer"
-                   class="hidden sm:inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white text-sm font-semibold px-4 py-2 transition-colors duration-200 shadow-lg shadow-red-900/40">
+                   class="hidden sm:inline-flex items-center gap-2 bg-brand-blue hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 transition-colors duration-200 shadow-lg shadow-blue-900/40">
                     {{-- WhatsApp icon --}}
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm4.6 13.38c-.19.52-1.1.98-1.52 1.04-.39.06-.88.08-1.42-.09a13.08 13.08 0 01-1.28-.48c-2.25-1-3.72-3.28-3.84-3.44-.12-.16-.95-1.26-.95-2.4 0-1.15.6-1.71.81-1.95.21-.23.46-.29.61-.29.15 0 .31.01.44.01.14.01.34-.05.52.4.19.47.65 1.6.71 1.72.06.11.1.25.02.4-.08.14-.12.23-.24.35-.12.12-.25.27-.36.36-.12.1-.24.21-.1.42.14.21.61.95 1.31 1.54.9.77 1.65 1.01 1.89 1.12.24.11.38.09.52-.06.14-.15.59-.69.75-.93.16-.24.31-.2.52-.12.21.08 1.34.63 1.57.75.23.11.38.17.44.26.06.1.06.56-.13 1.09z"/>
@@ -85,7 +81,7 @@
             @endforeach
             <a href="https://wa.me/{{ $wa }}?text={{ $waMsg }}"
                target="_blank" rel="noopener noreferrer"
-               class="mt-2 flex items-center justify-center gap-2 bg-brand-red text-white text-sm font-semibold px-4 py-3 transition-colors hover:bg-red-700">
+               class="mt-2 flex items-center justify-center gap-2 bg-brand-blue text-white text-sm font-semibold px-4 py-3 transition-colors hover:bg-blue-700">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/>
                 </svg>

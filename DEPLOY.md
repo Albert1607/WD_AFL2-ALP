@@ -206,7 +206,7 @@ php artisan config:cache
 ```
 
 ### Foto
-Upload file JPG ke `public/images/` (lihat README.md untuk daftar nama file).  
+Upload file JPG layanan ke `public/images/layanan/` dan foto umum/branding ke `public/images/global/` (lihat README.md untuk daftar nama file).  
 Tidak perlu restart server — foto langsung tampil.
 
 ### Data Layanan & Testimoni

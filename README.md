@@ -117,7 +117,7 @@ config('bengkel.address') // alamat lengkap
 
 ## Mengganti Foto
 
-Letakkan foto di `public/images/`. Nama file sudah ditentukan:
+Letakkan foto layanan di `public/images/layanan/` dan foto umum/branding di `public/images/global/`. Nama file sudah ditentukan:
 
 | File | Digunakan untuk |
 |------|-----------------|

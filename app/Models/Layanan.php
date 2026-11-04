@@ -57,4 +57,14 @@ class Layanan extends Model
     {
         return 'Rp '.number_format((float) $this->harga_mulai, 0, ',', '.');
     }
+
+    /**
+     * Public URL of the service image stored in public/images/layanan.
+     */
+    public function getGambarUrlAttribute(): string
+    {
+        $file = $this->gambar ?: 'layanan-default.jpg';
+
+        return asset('images/layanan/'.rawurlencode($file));
+    }
 }

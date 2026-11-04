@@ -52,6 +52,7 @@ class CompanyProfileTest extends TestCase
         $response->assertSee('Ganti Oli Mesin');
         $response->assertSee('Estimasi:');
         $response->assertSee('Pesan via WhatsApp');
+        $response->assertSee('images/layanan/layanan-ganti-oli.jpg');
     }
 
     public function test_testimonials_page_loads(): void

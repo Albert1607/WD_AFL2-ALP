@@ -2,8 +2,7 @@
 @props(['layanan'])
 
 @php
-    $imagePath = 'images/' . ($layanan->gambar ?? 'layanan-default.jpg');
-    $imageUrl  = asset($imagePath);
+    $imageUrl  = $layanan->gambar_url;
     $detailUrl = route('layanan.show', $layanan->slug);
 @endphp
 
@@ -19,7 +18,7 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
         {{-- Category badge --}}
         @if($layanan->kategori)
-            <span class="absolute top-3 left-3 px-2.5 py-1 bg-brand-red/90 text-white text-[10px] font-semibold uppercase tracking-wide backdrop-blur-sm">
+            <span class="absolute top-3 left-3 px-2.5 py-1 bg-brand-blue/90 text-white text-[10px] font-semibold uppercase tracking-wide backdrop-blur-sm">
                 {{ $layanan->kategori->nama_kategori }}
             </span>
         @endif
@@ -38,7 +37,7 @@
         <div class="flex items-center gap-4 text-xs text-slate-500 pt-1">
             <span class="flex items-center gap-1.5">
                 {{-- Clock icon --}}
-                <svg class="w-3.5 h-3.5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-3.5 h-3.5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="12" r="10" stroke-width="2"/>
                     <path d="M12 6v6l4 2" stroke-linecap="round" stroke-width="2"/>
                 </svg>
@@ -50,12 +49,12 @@
         <div class="flex items-center justify-between pt-2 border-t border-white/8 mt-auto">
             <div>
                 <span class="text-[10px] text-slate-500 uppercase tracking-wide">Mulai dari</span>
-                <div class="text-brand-red font-bold text-sm font-heading">
+                <div class="text-brand-blue font-bold text-sm font-heading">
                     {{ $layanan->harga_formatted }}
                 </div>
             </div>
             <a href="{{ $detailUrl }}"
-               class="text-xs font-semibold text-white bg-white/10 hover:bg-brand-red px-3 py-1.5 transition-colors duration-200">
+               class="text-xs font-semibold text-white bg-white/10 hover:bg-brand-blue px-3 py-1.5 transition-colors duration-200">
                 Detail →
             </a>
         </div>

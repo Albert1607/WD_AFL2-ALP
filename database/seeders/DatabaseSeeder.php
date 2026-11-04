@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             KategoriLayananSeeder::class,
             LayananSeeder::class,
             TestimoniSeeder::class,
+            LogoBrandSeeder::class,
         ]);
     }
 }

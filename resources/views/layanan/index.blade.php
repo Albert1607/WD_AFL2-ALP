@@ -10,7 +10,7 @@
     <div class="fade-up space-y-3">
         <x-section-title
             label="Layanan Kami"
-            title='Semua <span class="text-brand-red">Layanan</span> Servis Mobil'
+            title='Semua <span class="text-brand-blue">Layanan</span> Servis Mobil'
             subtitle="Pilih kategori layanan yang Anda butuhkan. Semua dikerjakan oleh mekanik berpengalaman dengan sparepart original."
             align="left"
         />
@@ -20,14 +20,14 @@
     <nav class="flex flex-wrap gap-2 fade-up" aria-label="Filter kategori layanan">
         <a href="{{ route('layanan.index') }}"
            class="px-4 py-2 text-sm font-medium transition-all duration-200
-                  {{ !$activeKategori ? 'bg-brand-red text-white shadow-lg shadow-red-900/40' : 'glass-card text-slate-400 hover:text-white hover:bg-white/12' }}">
+                  {{ !$activeKategori ? 'bg-brand-blue text-white shadow-lg shadow-blue-900/40' : 'glass-card text-slate-400 hover:text-white hover:bg-white/12' }}">
             Semua Layanan
         </a>
         @foreach($categories as $kategori)
             <a href="{{ route('layanan.index') }}?kategori={{ $kategori->slug }}"
                class="px-4 py-2 text-sm font-medium transition-all duration-200
                       {{ $activeKategori?->id === $kategori->id
-                           ? 'bg-brand-red text-white shadow-lg shadow-red-900/40'
+                           ? 'bg-brand-blue text-white shadow-lg shadow-blue-900/40'
                            : 'glass-card text-slate-400 hover:text-white hover:bg-white/12' }}">
                 {{ $kategori->nama_kategori }}
                 <span class="ml-1 text-xs opacity-60">({{ $kategori->layanan->count() }})</span>
@@ -38,8 +38,8 @@
     {{-- Active category description --}}
     @if($activeKategori)
         <div class="glass-card p-5 flex items-start gap-4 fade-up">
-            <div class="w-8 h-8 bg-brand-red/15 flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-4 h-4 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div class="w-8 h-8 bg-brand-blue/15 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
             </div>
@@ -76,7 +76,7 @@
         </div>
         <a href="https://wa.me/{{ config('bengkel.wa') }}?text={{ config('bengkel.wa_message') }}"
            target="_blank" rel="noopener noreferrer"
-           class="shrink-0 inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white font-semibold px-6 py-3 transition-colors shadow-lg shadow-red-900/40">
+           class="shrink-0 inline-flex items-center gap-2 bg-brand-blue hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors shadow-lg shadow-blue-900/40">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/>
             </svg>

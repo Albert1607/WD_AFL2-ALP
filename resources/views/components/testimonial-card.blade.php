@@ -20,14 +20,14 @@
     {{-- Customer info --}}
     <footer class="flex items-center gap-3 pt-3 border-t border-white/8">
         {{-- Avatar initial --}}
-        <div class="w-9 h-9 bg-brand-red/20 border border-brand-red/30 flex items-center justify-center text-brand-red font-bold text-sm font-heading shrink-0">
+        <div class="w-9 h-9 bg-brand-blue/20 border border-brand-blue/30 flex items-center justify-center text-brand-blue font-bold text-sm font-heading shrink-0">
             {{ mb_strtoupper(mb_substr($testimoni->nama_pelanggan, 0, 1)) }}
         </div>
         <div class="min-w-0">
             <div class="text-sm font-semibold text-white truncate">{{ $testimoni->nama_pelanggan }}</div>
             <div class="text-xs text-slate-500 truncate flex items-center gap-1.5">
                 {{-- Car icon --}}
-                <svg class="w-3.5 h-3.5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-3.5 h-3.5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7h-3l-2-4H9L7 7H4a1 1 0 00-1 1v8a1 1 0 001 1h1a2 2 0 004 0h6a2 2 0 004 0h1a1 1 0 001-1V8a1 1 0 00-1-1z"/>
                 </svg>
                 {{ $testimoni->jenis_kendaraan }}
