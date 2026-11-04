@@ -9,7 +9,7 @@ use Illuminate\Database\Seeder;
 class TestimoniSeeder extends Seeder
 {
     /**
-     * Seed the testimoni table with 10 realistic customer reviews.
+     * Seed the testimoni table with 10 realistic customer reviews averaging 4.6 (matching Google Maps).
      */
     public function run(): void
     {
@@ -24,6 +24,7 @@ class TestimoniSeeder extends Seeder
         $spooring = Layanan::where('slug', 'spooring-balancing')->first();
         $gantiBan = Layanan::where('slug', 'ganti-ban')->first();
 
+        // 6 fives + 4 fours = 46 / 10 = exactly 4.6 average rating
         $testimoni = [
             [
                 'layanan_id' => $gantiOli->id,
@@ -37,63 +38,63 @@ class TestimoniSeeder extends Seeder
                 'nama_pelanggan' => 'Dian Rahayu',
                 'jenis_kendaraan' => 'Honda Jazz RS 2020',
                 'rating' => 5,
-                'komentar' => 'Paket servis ringannya lengkap banget, semua dicek mulai dari rem sampai tekanan ban. Mobil jadi terasa lebih ringan dan responsif. Bengkelnya bersih, ada ruang tunggunya juga. Recommended!',
+                'komentar' => 'Paket servis ringannya lengkap banget, ganti filter kabin AC dan cek rem. Mobil jadi terasa dingin dan tarikannya enteng. Ruang tunggu ber-AC bersih. Recommended bengkel mobil di Driyorejo!',
             ],
             [
                 'layanan_id' => $tuneUp->id,
                 'nama_pelanggan' => 'Rizky Pratama',
                 'jenis_kendaraan' => 'Honda Civic 1.5T 2022',
                 'rating' => 5,
-                'komentar' => 'Mobil saya sering brebet waktu pagi hari. Setelah tune up injeksi di sini, langsung mulus seperti mobil baru! Mekaniknya paham betul soal sistem injeksi Honda. Harga juga terjangkau untuk kualitas segini.',
+                'komentar' => 'Mobil saya brebet dan ada check engine menyala. Di-scan pake alat diagnostik OBD langsung ketahuan sensornya kotor. Setelah tune up dan kalibrasi, tarikan balik halus seperti baru.',
             ],
             [
                 'layanan_id' => $transmisi->id,
                 'nama_pelanggan' => 'Siti Nurhaliza',
                 'jenis_kendaraan' => 'Toyota Corolla Cross 2023',
-                'rating' => 5,
-                'komentar' => 'Sebelumnya transmisi CVT mobil saya terasa hentakan saat akselerasi dan kurang smooth. Setelah servis transmisi di sini, masalah langsung teratasi. Mekaniknya profesional dan menjelaskan dengan detail kondisi transmisi saya.',
+                'rating' => 4,
+                'komentar' => 'Servis transmisi otomatis dan kuras oli matic di sini rapi. Hasilnya perpindahan gigi jadi jauh lebih halus. Pengerjaan teliti walau saat itu bengkel agak ramai.',
             ],
             [
                 'layanan_id' => $servisBesar->id,
                 'nama_pelanggan' => 'Agus Firmansyah',
                 'jenis_kendaraan' => 'Daihatsu Xenia 1.3 R 2019',
                 'rating' => 4,
-                'komentar' => 'Servis besar yang cukup komprehensif. Mobil saya yang sudah 5 tahun jadi seperti mobil baru lagi. Waktu pengerjaan sekitar 6 jam sesuai estimasi. Mekanik menjelaskan kondisi setiap komponen dengan jelas. Worth it!',
+                'komentar' => 'Servis besar yang komprehensif. Mobil saya yang sudah 5 tahun jadi segar lagi performanya. Mekanik menjelaskan kondisi setiap komponen dengan transparan sebelum diganti.',
             ],
             [
                 'layanan_id' => $kampasRem->id,
                 'nama_pelanggan' => 'Linda Kusuma',
                 'jenis_kendaraan' => 'Mitsubishi Xpander 1.5 Ultimate 2021',
                 'rating' => 5,
-                'komentar' => 'Rem mobil saya mulai bunyi dan kurang pakem. Langsung ganti kampas rem di sini, pelayanan super cepat hanya 45 menit. Mekaniknya juga ngecek kondisi cakram sekalian tanpa biaya tambahan. Sangat profesional!',
+                'komentar' => 'Rem mobil mulai bunyi gesekan dan kurang pakem. Ganti kampas rem depan di sini cepat hanya 45 menit. Cakram juga dibersihkan dan dicek ketebalannya sekalian.',
             ],
             [
                 'layanan_id' => $gantiAki->id,
                 'nama_pelanggan' => 'Hendra Wijaya',
                 'jenis_kendaraan' => 'Toyota Innova Reborn 2.0 G 2020',
                 'rating' => 5,
-                'komentar' => 'Mobil mogok pagi-pagi gara-gara aki soak. Langsung bawa ke Kardi Putra Motor, akinya langsung diganti dan dicek juga sistem pengisian listriknya. Sekarang starter mobil sangat responsif. Terima kasih tim KPM!',
+                'komentar' => 'Mobil sempat susah distarter pagi hari karena aki sudah 3 tahun. Di Kardi Putra Motor dicek voltasenya, langsung diganti aki GS Astra original bergaransi. Mantap pelayanannya!',
             ],
             [
                 'layanan_id' => $busiListrik->id,
                 'nama_pelanggan' => 'Fitri Handayani',
                 'jenis_kendaraan' => 'Suzuki Ertiga GX 2022',
-                'rating' => 5,
-                'komentar' => 'Lampu mobil saya berkedip-kedip dan sesekali mati. Mekanik di sini cek kelistrikan secara menyeluruh dan menemukan ada koneksi yang longgar. Busi juga ikut diganti. Harga sangat bersahabat dan mobilnya langsung beres!',
+                'rating' => 4,
+                'komentar' => 'AC mobil kurang dingin dan lampu kabin redup. Diperiksa ternyata freon berkurang dan filter AC penuh debu. Setelah di-service AC-nya dingin menusuk lagi. Harga ramah di kantong.',
             ],
             [
                 'layanan_id' => $spooring->id,
                 'nama_pelanggan' => 'Fajar Nugroho',
                 'jenis_kendaraan' => 'Toyota Rush TRD 2020',
                 'rating' => 5,
-                'komentar' => 'Setir mobil saya miring ke kiri dan ban cepat aus tidak merata. Setelah spooring dan balancing di sini, mobil langsung lurus sempurna dan getaran di setir hilang. Proses pengerjaannya rapi dan mekaniknya berpengalaman.',
+                'komentar' => 'Setir sempat narik ke kiri di jalan tol. Setelah spooring dan balancing 4 roda di sini, setir langsung lurus mantap tanpa getar sama sekali. Alatnya modern dan computerized.',
             ],
             [
                 'layanan_id' => $gantiBan->id,
                 'nama_pelanggan' => 'Ani Setianingsih',
                 'jenis_kendaraan' => 'Honda HR-V 1.5 SE 2021',
                 'rating' => 4,
-                'komentar' => 'Ganti ban belakang di sini, prosesnya cepat dan aman. Velg mobil saya tidak lecet sama sekali. Ada banyak pilihan merek ban dengan harga berbeda-beda. Termasuk balancing setelah pasang ban, puas dengan hasilnya!',
+                'komentar' => 'Ganti ban depan di sini alatnya hidrolik aman untuk velg racing. Pilihan merk ban cukup lengkap dan dapat bonus pengisian nitrogen. Sangat puas dengan hasilnya!',
             ],
         ];
 
