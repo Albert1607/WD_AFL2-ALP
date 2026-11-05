@@ -32,7 +32,7 @@
         <div class="flex-1 w-full space-y-2">
             @for($star = 5; $star >= 1; $star--)
                 @php
-                    $count = $testimoni->where('rating', $star)->count();
+                    $count = $ratingCounts[$star] ?? 0;
                     $pct   = $totalCount > 0 ? ($count / $totalCount) * 100 : 0;
                 @endphp
                 <div class="flex items-center gap-3 text-sm">

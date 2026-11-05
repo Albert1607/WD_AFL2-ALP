@@ -65,6 +65,22 @@ class CompanyProfileTest extends TestCase
         $response->assertSee('dari 5 bintang');
     }
 
+    public function test_testimonials_star_rating_summary_is_consistent_across_pagination(): void
+    {
+        $pageOne = $this->get('/testimoni');
+        $pageTwo = $this->get('/testimoni?page=2');
+
+        $pageOne->assertStatus(200);
+        $pageTwo->assertStatus(200);
+
+        // Overall ratings: 6 five-star, 4 four-star, average 4.6
+        $pageOne->assertSee('4.6');
+        $pageTwo->assertSee('4.6');
+
+        $pageOne->assertViewHas('ratingCounts', [5 => 6, 4 => 4]);
+        $pageTwo->assertViewHas('ratingCounts', [5 => 6, 4 => 4]);
+    }
+
     public function test_contact_page_loads(): void
     {
         $response = $this->get('/kontak');

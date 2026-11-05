@@ -35,7 +35,7 @@ return [
     'stats' => [
         ['value' => '20+',   'label' => 'Tahun Pengalaman'],
         ['value' => '5.000+', 'label' => 'Mobil Diservis'],
-        ['value' => '4.9',   'label' => 'Rating Pelanggan'],
+        ['value' => '4.6',   'label' => 'Rating Pelanggan'],
         ['value' => '100%',  'label' => 'Sparepart Asli'],
     ],
 

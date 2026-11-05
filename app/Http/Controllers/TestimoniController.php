@@ -16,9 +16,14 @@ class TestimoniController extends Controller
             ->latest()
             ->paginate(9);
 
-        $averageRating = Testimoni::avg('rating');
+        $averageRating = (float) (Testimoni::avg('rating') ?? 0);
         $totalCount = Testimoni::count();
+        $ratingCounts = Testimoni::query()
+            ->selectRaw('rating, count(*) as count')
+            ->groupBy('rating')
+            ->pluck('count', 'rating')
+            ->all();
 
-        return view('testimoni.index', compact('testimoni', 'averageRating', 'totalCount'));
+        return view('testimoni.index', compact('testimoni', 'averageRating', 'totalCount', 'ratingCounts'));
     }
 }
