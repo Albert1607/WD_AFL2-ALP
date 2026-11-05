@@ -6,7 +6,6 @@ use App\Models\Layanan;
 use App\Models\LogoBrand;
 use App\Models\Testimoni;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Collection;
 
 class HomeController extends Controller
 {
@@ -15,12 +14,10 @@ class HomeController extends Controller
      */
     public function index(): View
     {
-        /** @var Collection<int, Layanan> $featuredLayanan */
         $featuredLayanan = Layanan::with('kategori')
             ->limit(6)
             ->get();
 
-        /** @var Collection<int, Testimoni> $latestTestimoni */
         $latestTestimoni = Testimoni::with('layanan')
             ->latest()
             ->limit(3)
@@ -30,7 +27,6 @@ class HomeController extends Controller
         $whyUs = config('bengkel.why_us');
         $howItWorks = config('bengkel.how_it_works');
 
-        /** @var Collection<int, LogoBrand> $brands */
         $brands = LogoBrand::orderBy('id')->get();
 
         return view('home', compact(

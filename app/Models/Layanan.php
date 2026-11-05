@@ -10,7 +10,6 @@ class Layanan extends Model
 {
     protected $table = 'layanan';
 
-    /** @var list<string> */
     protected $fillable = [
         'kategori_id',
         'nama_layanan',
@@ -21,7 +20,6 @@ class Layanan extends Model
         'gambar',
     ];
 
-    /** @var array<string, string> */
     protected $casts = [
         'harga_mulai' => 'decimal:2',
     ];

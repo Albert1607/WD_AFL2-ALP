@@ -9,7 +9,6 @@ class Testimoni extends Model
 {
     protected $table = 'testimoni';
 
-    /** @var list<string> */
     protected $fillable = [
         'layanan_id',
         'nama_pelanggan',
@@ -18,7 +17,6 @@ class Testimoni extends Model
         'komentar',
     ];
 
-    /** @var array<string, string> */
     protected $casts = [
         'rating' => 'integer',
     ];

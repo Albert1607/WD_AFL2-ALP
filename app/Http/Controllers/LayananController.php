@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\KategoriLayanan;
 use App\Models\Layanan;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class LayananController extends Controller
@@ -17,7 +16,6 @@ class LayananController extends Controller
     {
         $kategoriSlug = $request->query('kategori');
 
-        /** @var Collection<int, KategoriLayanan> $categories */
         $categories = KategoriLayanan::with(['layanan'])->get();
 
         $activeKategori = $kategoriSlug
@@ -40,7 +38,6 @@ class LayananController extends Controller
      */
     public function show(string $slug): View
     {
-        /** @var Layanan $layanan */
         $layanan = Layanan::with(['kategori', 'testimoni'])
             ->where('slug', $slug)
             ->firstOrFail();

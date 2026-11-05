@@ -11,7 +11,6 @@ class LogoBrand extends Model
     /** @use HasFactory<LogoBrandFactory> */
     use HasFactory;
 
-    /** @var list<string> */
     protected $fillable = ['nama_brand', 'logo', 'jenis'];
 
     /**
