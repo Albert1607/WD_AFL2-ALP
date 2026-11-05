@@ -370,10 +370,10 @@
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8">
             @foreach($brands as $brand)
-                <div class="brand-item w-20 h-10 sm:w-24 sm:h-12 p-2 flex items-center justify-center">
+                <div class="brand-item w-24 h-12 sm:w-32 sm:h-14 lg:w-36 lg:h-16 p-2 flex items-center justify-center">
                     <img src="{{ $brand->logo_url }}"
                          alt="Logo {{ $brand->nama_brand }}"
-                         class="max-h-6 sm:max-h-7 max-w-full object-contain"
+                         class="max-h-8 sm:max-h-10 lg:max-h-12 max-w-full object-contain"
                          loading="lazy">
                 </div>
             @endforeach
