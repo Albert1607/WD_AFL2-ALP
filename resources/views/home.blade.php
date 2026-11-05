@@ -54,12 +54,12 @@
             {{-- Left column: Headline & CTAs --}}
             <div class="lg:col-span-7 space-y-7">
                 {{-- Location / Trust Badge --}}
-                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-brand-blue/10 border border-brand-blue/30 text-white text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md">
+                {{-- <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-brand-blue/10 border border-brand-blue/30 text-white text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md">
                     <span class="w-2 h-2 bg-brand-blue inline-block animate-pulse" aria-hidden="true"></span>
                     <span class="text-brand-blue font-bold">BENGKEL RESMI &amp; TERPERCAYA</span>
                     <span class="text-slate-500" aria-hidden="true">|</span>
                     <span class="text-slate-200">Driyorejo, Gresik</span>
-                </div>
+                </div> --}}
 
                 {{-- Headline --}}
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white font-heading leading-tight drop-shadow-sm">
